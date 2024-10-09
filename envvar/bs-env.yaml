@@ -1,0 +1,28 @@
+apiVersion: rhdh.redhat.com/v1alpha2
+kind: Backstage
+metadata:
+  name: my-rhdh
+spec:
+  application:
+    extraEnvs:
+      envs:
+        - name: MY_ORG
+          value: 'my-org'
+      configMaps:
+        - name: my-log-level
+      secrets:
+        - name: my-secret
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-log-level
+data:
+  LOG_LEVEL: "debug"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+stringData:
+  MY_SECRET: "secret"
