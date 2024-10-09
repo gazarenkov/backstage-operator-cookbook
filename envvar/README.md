@@ -30,6 +30,10 @@ Note: the Pod name prefix is always like "**backstage-<your-CR-name>-**", the ge
 
 ````
 kubectl exec --stdin --tty backstage-my-rhdh-7595b5f6-tcrmv -c backstage-backend -- env      
+````
+Output is like:
+
+````
 ...
 MY_ORG=my-org
 ...
@@ -43,6 +47,11 @@ Also, you can make sure LOG_LEVEL env variable impacted on Backstage server log 
 
 ````
  kubectl attach backstage-my-rhdh-7595b5f6-tcrmv -c backstage-backend -i -t 
+````
+
+Output is like:
+
+````
 ...
 {"level":"debug","message":"Processing location:default/generated-28cca00eef20648da516bda20fe0e71b7b7364ba","plugin":"catalog","service":"backstage","timestamp":"2024-10-09 07:09:40"}
 ...
